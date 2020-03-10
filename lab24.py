@@ -6,15 +6,15 @@ import scipy.misc
 
 F = scipy.misc.face(gray=True)
 
-
 U,S,VT = LA.svd(F)
 
 s=200
 
 Ftest = U[:,:s].dot(NP.diag(S[:s])).dot(VT[:s])
 
+# Show the compressed image in the plt plot
 PLT.imshow(Ftest, cmap='gray')
-
+# save the plot image as a png file
 PLT.savefig('compressed_raccoon.png')
 
 def ftest(s):
